@@ -14,7 +14,7 @@ minHeight: '100svh', position: 'relative',
       }}>
         <div style={{
           position: 'absolute', inset: 0,
-          backgroundImage: `url('/foto-casal.jpg')`,
+          backgroundImage: `url('https://i.ibb.co/Q3Yyv20p/foto-casal.jpg')
           backgroundSize: 'cover',
           backgroundPosition: 'center center',
           filter: 'brightness(0.55)',
