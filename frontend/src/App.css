@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cor-primaria: #c8a84b;
+  --cor-secundaria: #a08830;
+  --cor-verde: #6b7a3a;
+  --cor-verde-claro: #d4ddb8;
+  --cor-verde-escuro: #4a5a2a;
+  --cor-fundo: #f0f3e3;
+  --cor-clara: #f5f5e8;
+  --cor-texto: #4a5a2a;
+  --cor-borda: #c8a84b;
+  --fonte-titulo: 'Cormorant Garamond', serif;
+  --fonte-corpo: 'Montserrat', sans-serif;
+}
+
+body {
+  font-family: var(--fonte-corpo);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--fonte-titulo);
+  font-weight: 400;
+  color: var(--cor-verde-escuro);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 12px;
+  color: var(--cor-verde-escuro);
+}
+
+.section-subtitulo {
+  text-align: center;
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--cor-primaria);
+  margin-bottom: 8px;
+}
+
+.divisor {
+  width: 60px;
+  height: 1px;
+  background: var(--cor-primaria);
+  margin: 16px auto 48px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 36px;
+  font-family: var(--fonte-corpo);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primario {
+  background: var(--cor-primaria);
+  color: white;
+}
+
+.btn-primario:hover {
+  background: var(--cor-secundaria);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--cor-primaria);
+  border: 1px solid var(--cor-primaria);
+}
+
+.btn-outline:hover {
+  background: var(--cor-primaria);
+  color: white;
+}
