@@ -165,55 +165,7 @@ const Confirmacao = () => {
           </div>
         </div>
 
-        {/* Acompanhante */}
-        <div style={{ marginBottom: 32 }}>
-          <label style={{
-            display: 'flex', alignItems: 'center', gap: 10,
-            cursor: 'pointer', marginBottom: 16,
-          }}>
-            <input
-              type="checkbox"
-              checked={acompanhante}
-              onChange={e => setAcompanhante(e.target.checked)}
-              style={{ accentColor: '#6b7a3a', width: 16, height: 16 }}
-            />
-            <span style={{
-              fontFamily: "'Montserrat', sans-serif",
-              fontSize: '0.8rem', color: '#4a5a2a',
-            }}>
-              Virei com acompanhante
-            </span>
-          </label>
-
-          {acompanhante && (
-            <div style={{ display: 'flex', gap: 12 }}>
-              <input
-                placeholder="Nome do acompanhante"
-                value={nomeAcomp}
-                onChange={e => setNomeAcomp(e.target.value)}
-                style={{
-                  flex: 1, padding: '12px 16px',
-                  border: '1px solid #d4ddb8',
-                  fontFamily: "'Montserrat', sans-serif",
-                  fontSize: '0.85rem', color: '#4a5a2a',
-                  outline: 'none', background: '#fafaf5',
-                }}
-              />
-              <input
-                placeholder="Sobrenome"
-                value={sobrenomeAcomp}
-                onChange={e => setSobrenomeAcomp(e.target.value)}
-                style={{
-                  flex: 1, padding: '12px 16px',
-                  border: '1px solid #d4ddb8',
-                  fontFamily: "'Montserrat', sans-serif",
-                  fontSize: '0.85rem', color: '#4a5a2a',
-                  outline: 'none', background: '#fafaf5',
-                }}
-              />
-            </div>
-          )}
-        </div>
+        
 
         {/* Botão */}
         <button
