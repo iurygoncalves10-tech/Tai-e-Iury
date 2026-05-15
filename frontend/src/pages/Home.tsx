@@ -5,16 +5,14 @@ import Footer from '../components/Footer';
 const Home = () => {
   return (
     <div>
-      {/* ── CAPA ── */}
       <section style={{
-       height: '100dvh',
-minHeight: '100svh', position: 'relative',
+        height: '100vh', position: 'relative',
         display: 'flex', alignItems: 'center',
         justifyContent: 'center', overflow: 'hidden',
       }}>
         <div style={{
           position: 'absolute', inset: 0,
-          backgroundImage: `url('https://i.ibb.co/Q3Yyv20p/foto-casal.jpg')
+          backgroundImage: 'url("https://i.ibb.co/Q3Yyv20p/foto-casal.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center center',
           filter: 'brightness(0.55)',
@@ -25,8 +23,6 @@ minHeight: '100svh', position: 'relative',
           textAlign: 'center', padding: '0 20px',
           width: '100%', maxWidth: 800,
         }}>
-    
-
           <h1 style={{
             fontFamily: "'Cormorant Garamond', serif",
             fontSize: 'clamp(2.5rem, 10vw, 6rem)',
@@ -53,8 +49,7 @@ minHeight: '100svh', position: 'relative',
               padding: '14px 0',
               width: '100%', maxWidth: 280,
               textAlign: 'center',
-              background: 'transparent', color: 'white',
-border: '1px solid white',
+              background: '#6b7a3a', color: 'white',
               fontFamily: "'Montserrat', sans-serif",
               fontSize: '0.75rem',
               letterSpacing: 2, textTransform: 'uppercase',
@@ -82,7 +77,7 @@ border: '1px solid white',
               width: '100%', maxWidth: 280,
               textAlign: 'center',
               background: 'transparent',
-              border: '1px solid white', color: 'white',
+              border: '1px solid #c8a84b', color: '#c8a84b',
               fontFamily: "'Montserrat', sans-serif",
               fontSize: '0.75rem',
               letterSpacing: 2, textTransform: 'uppercase',
@@ -97,20 +92,11 @@ border: '1px solid white',
         <div style={{
           position: 'absolute', bottom: 24, left: '50%',
           transform: 'translateX(-50%)', color: 'rgba(255,255,255,0.6)',
-          fontSize: '1.5rem', animation: 'bounce 2s infinite',
+          fontSize: '1.5rem',
         }}>↓</div>
       </section>
 
-     
-
       <Footer />
-
-      <style>{`
-        @keyframes bounce {
-          0%, 100% { transform: translateX(-50%) translateY(0); }
-          50% { transform: translateX(-50%) translateY(10px); }
-        }
-      `}</style>
     </div>
   );
 };
