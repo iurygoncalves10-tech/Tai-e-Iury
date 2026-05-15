@@ -4,9 +4,6 @@ const Confirmacao = () => {
   const [presenca, setPresenca] = useState<'sim' | 'nao' | null>(null);
   const [nome, setNome] = useState('');
   const [sobrenome, setSobrenome] = useState('');
-  const [acompanhante, setAcompanhante] = useState(false);
-  const [nomeAcomp, setNomeAcomp] = useState('');
-  const [sobrenomeAcomp, setSobrenomeAcomp] = useState('');
   const [enviado, setEnviado] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -20,8 +17,8 @@ const Confirmacao = () => {
         body: JSON.stringify({
           nome: `${nome} ${sobrenome}`,
           status: presenca === 'sim' ? 'confirmado' : 'recusado',
-          num_acompanhantes: acompanhante ? 1 : 0,
-          mensagem: acompanhante ? `Acompanhante: ${nomeAcomp} ${sobrenomeAcomp}` : '',
+         num_acompanhantes: 0,
+mensagem: '',
         }),
       });
       setEnviado(true);
