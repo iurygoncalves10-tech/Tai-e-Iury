@@ -9,7 +9,7 @@ const presentes = [
   { id: 3, nome: 'Cobertor pra noiva sempre estar coberta de razão', preco: 200, img: 'https://i.ibb.co/dJP6MKwQ/Cobertor-pra-noiva-sempre-estar-cooberta-de-raz-o-R-200.jpg' },
   { id: 4, nome: 'Convidado não convida, mas pagando 2k dá certo', preco: 2000, img: 'https://i.ibb.co/yMrgGPq/convidado-n-o-convida-mas-pagando-2k-da-certo.jpg' },
   { id: 5, nome: 'Massagem para o noivo relaxar antes de ver a fatura', preco: 300, img: 'https://i.ibb.co/kVrHwThQ/Massagem-para-o-noivo-300.jpg' },
-  { id: 6, nome: 'Para ajudar os noivos na lua de mel', preco: 2000, img: 'https://i.ibb.co/ZzQ6mbh3/Para-ajudar-na-lua-de-mel-R-2k.jpg' },
+ { id: 6, nome: 'Para ajudar os noivos na lua de mel', preco: 2000, img: 'https://i.ibb.co/ZzQ6mbh3/Para-ajudar-na-lua-de-mel-R-2k.jpg' },
   { id: 7, nome: 'Para deixar a noiva feliz', preco: 380, img: 'https://i.ibb.co/ntPGLnX/Para-deixar-a-noiva-feliz-R-380.jpg' },
   { id: 8, nome: 'Para o noivo parar de sofrer pelo Vasco', preco: 4000, img: 'https://i.ibb.co/ksKfdfKv/Para-o-noivo-parar-de-sofrer-pelo-vasco-4k.jpg' },
   { id: 9, nome: 'Para o noivo sair mais rápido do banheiro', preco: 310, img: 'https://i.ibb.co/GQf8B1Y5/Para-o-noivo-sair-mais-r-pido-do-banheiro-R-310.jpg' },
