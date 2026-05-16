@@ -135,7 +135,7 @@ mensagem: '',
             Seus dados
           </p>
           <input
-  placeholder="Nome completo"
+ placeholder="Nome completo"
   value={nome}
   onChange={e => setNome(e.target.value)}
   style={{
