@@ -3,22 +3,21 @@ import React, { useState } from 'react';
 const Confirmacao = () => {
   const [presenca, setPresenca] = useState<'sim' | 'nao' | null>(null);
   const [nome, setNome] = useState('');
-  const [sobrenome, setSobrenome] = useState('');
   const [enviado, setEnviado] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async () => {
-    if (!nome || !sobrenome || !presenca) return;
+    if (!nome || !presenca) return;
     setLoading(true);
     try {
       await fetch('http://localhost:8000/api/convidados', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          nome: `${nome} ${sobrenome}`,
+          nome: nome,
           status: presenca === 'sim' ? 'confirmado' : 'recusado',
-         num_acompanhantes: 0,
-mensagem: '',
+          num_acompanhantes: 0,
+          mensagem: '',
         }),
       });
       setEnviado(true);
@@ -32,11 +31,17 @@ mensagem: '',
     return (
       <div style={{
         minHeight: '100vh',
-        background: '#f0f3e3',
+        background: 'linear-gradient(160deg, #d4ddb8 0%, #e8edcf 60%, #f5f0e0 100%)',
         display: 'flex', alignItems: 'center',
         justifyContent: 'center', padding: 24,
       }}>
-        <div style={{ textAlign: 'center', maxWidth: 500 }}>
+        <div style={{
+          textAlign: 'center', maxWidth: 500,
+          background: 'white',
+          padding: '48px 32px',
+          border: '1px solid #6b7a3a',
+          boxShadow: '0 12px 48px rgba(107,122,58,0.15)',
+        }}>
           <div style={{ fontSize: '3rem', marginBottom: 16 }}>
             {presenca === 'sim' ? '💍' : '🌸'}
           </div>
@@ -47,7 +52,7 @@ mensagem: '',
           }}>
             {presenca === 'sim' ? 'Confirmado com amor!' : 'Recebemos sua resposta!'}
           </h2>
-          <div style={{ width: 60, height: 1, background: '#c8a84b', margin: '0 auto 24px' }} />
+          <div style={{ width: 50, height: 2, background: 'linear-gradient(90deg, #c8a84b, #6b7a3a)', margin: '0 auto 24px' }} />
           <p style={{
             fontFamily: "'Cormorant Garamond', serif",
             fontSize: '1.2rem', color: '#4a5a2a',
@@ -65,7 +70,7 @@ mensagem: '',
   return (
     <div style={{
       minHeight: '100vh',
-      background: '#f0f3e3',
+      background: 'linear-gradient(160deg, #d4ddb8 0%, #e8edcf 60%, #f5f0e0 100%)',
       display: 'flex', alignItems: 'center',
       justifyContent: 'center', padding: '40px 20px',
     }}>
@@ -73,12 +78,11 @@ mensagem: '',
         width: '100%', maxWidth: 560,
         background: 'white',
         padding: 'clamp(32px, 6vw, 56px)',
-        border: '1px solid #c8a84b',
+        border: '1px solid #6b7a3a',
+        boxShadow: '0 12px 48px rgba(107,122,58,0.15)',
       }}>
 
-        {/* Cabeçalho */}
         <div style={{ textAlign: 'center', marginBottom: 36 }}>
-         
           <h1 style={{
             fontFamily: "'Cormorant Garamond', serif",
             fontSize: 'clamp(2rem, 6vw, 2.8rem)',
@@ -87,17 +91,18 @@ mensagem: '',
           }}>
             Confirmação de Presença
           </h1>
-          <div style={{ width: 50, height: 1, background: '#c8a84b', margin: '0 auto 20px' }} />
+          <div style={{ width: 50, height: 2, background: 'linear-gradient(90deg, #c8a84b, #6b7a3a)', margin: '0 auto 20px' }} />
           <p style={{
             fontFamily: "'Cormorant Garamond', serif",
             fontSize: '1.1rem', fontStyle: 'italic',
             color: '#6b7a3a', lineHeight: 1.8,
           }}>
-            Cada presença é um presente! Nosso grande dia será ainda mais especial com você ao nosso lado. Por isso, pedimos gentilmente que confirme sua presença até o dia <strong>19 de julho de 2026</strong>. Contamos muito com você! 
+            Cada presença é um presente! Nosso grande dia será ainda mais especial
+            com você ao nosso lado. Por isso, pedimos gentilmente que confirme sua
+            presença até o dia <strong>19 de julho de 2026</strong>. Contamos muito com você!
           </p>
         </div>
 
-        {/* Pergunta */}
         <div style={{ marginBottom: 32 }}>
           <p style={{
             fontFamily: "'Cormorant Garamond', serif",
@@ -113,8 +118,8 @@ mensagem: '',
                 fontFamily: "'Montserrat', sans-serif",
                 fontSize: '0.75rem', letterSpacing: 2,
                 textTransform: 'uppercase', cursor: 'pointer',
-                border: '1px solid #c8a84b',
-                background: presenca === op ? '#6b7a3a' : 'transparent',
+                border: presenca === op ? '2px solid #6b7a3a' : '1px solid #c8a84b',
+                background: presenca === op ? '#6b7a3a' : '#f5f7ee',
                 color: presenca === op ? 'white' : '#4a5a2a',
                 transition: 'all 0.3s',
               }}>
@@ -124,8 +129,7 @@ mensagem: '',
           </div>
         </div>
 
-        {/* Nome */}
-        <div style={{ marginBottom: 20 }}>
+        <div style={{ marginBottom: 32 }}>
           <p style={{
             fontFamily: "'Montserrat', sans-serif",
             fontSize: '0.7rem', letterSpacing: 2,
@@ -135,29 +139,26 @@ mensagem: '',
             Seus dados
           </p>
           <input
- placeholder="Nome completo"
-  value={nome}
-  onChange={e => setNome(e.target.value)}
-  style={{
-    width: '100%', padding: '12px 16px',
-    border: '1px solid #c8d4a0',
-    fontFamily: "'Montserrat', sans-serif",
-    fontSize: '0.85rem', color: '#4a5a2a',
-    outline: 'none', background: '#f9faf5',
-    boxSizing: 'border-box' as const,
-  }}
-/>
+            placeholder="Nome completo"
+            value={nome}
+            onChange={e => setNome(e.target.value)}
+            style={{
+              width: '100%', padding: '12px 16px',
+              border: '1px solid #c8d4a0',
+              fontFamily: "'Montserrat', sans-serif",
+              fontSize: '0.85rem', color: '#4a5a2a',
+              outline: 'none', background: '#f9faf5',
+              boxSizing: 'border-box' as const,
+            }}
+          />
         </div>
 
-        
-
-        {/* Botão */}
         <button
           onClick={handleSubmit}
-          disabled={!nome || !sobrenome || !presenca || loading}
+          disabled={!nome || !presenca || loading}
           style={{
             width: '100%', padding: '16px',
-            background: (!nome || !sobrenome || !presenca) ? '#d4ddb8' : '#6b7a3a',
+            background: (!nome || !presenca) ? '#c8d4a0' : '#6b7a3a',
             color: 'white', border: 'none',
             fontFamily: "'Montserrat', sans-serif",
             fontSize: '0.75rem', letterSpacing: 3,
