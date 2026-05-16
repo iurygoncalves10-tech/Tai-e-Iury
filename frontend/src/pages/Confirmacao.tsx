@@ -134,32 +134,19 @@ mensagem: '',
           }}>
             Seus dados
           </p>
-          <div style={{ display: 'flex', gap: 12 }}>
-            <input
-              placeholder="Nome"
-              value={nome}
-              onChange={e => setNome(e.target.value)}
-              style={{
-                flex: 1, padding: '12px 16px',
-                border: '1px solid #d4ddb8',
-                fontFamily: "'Montserrat', sans-serif",
-                fontSize: '0.85rem', color: '#4a5a2a',
-                outline: 'none', background: '#fafaf5',
-              }}
-            />
-            <input
-              placeholder="Sobrenome"
-              value={sobrenome}
-              onChange={e => setSobrenome(e.target.value)}
-              style={{
-                flex: 1, padding: '12px 16px',
-                border: '1px solid #d4ddb8',
-                fontFamily: "'Montserrat', sans-serif",
-                fontSize: '0.85rem', color: '#4a5a2a',
-                outline: 'none', background: '#fafaf5',
-              }}
-            />
-          </div>
+          <input
+  placeholder="Nome completo"
+  value={nome}
+  onChange={e => setNome(e.target.value)}
+  style={{
+    width: '100%', padding: '12px 16px',
+    border: '1px solid #c8d4a0',
+    fontFamily: "'Montserrat', sans-serif",
+    fontSize: '0.85rem', color: '#4a5a2a',
+    outline: 'none', background: '#f9faf5',
+    boxSizing: 'border-box' as const,
+  }}
+/>
         </div>
 
         
